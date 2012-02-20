@@ -11,19 +11,19 @@
 $phpEx = 'php';
 define('IN_PHPBB', true);
 
-if (!isset($GLOBALS['dbms']))
+if (!defined('dbms'))
 {
-	$GLOBALS['dbms']		= 'sqlite';
-	$GLOBALS['dbhost']		= dirname(__FILE__) . '/unit_tests.sqlite2'; // filename
-	$GLOBALS['dbuser']		= '';
-	$GLOBALS['dbpasswd']	= '';
-	$GLOBALS['dbname']		= '';
-	$GLOBALS['dbport']		= '';
-	$GLOBALS['table_prefix']= '';
+	define('dbms', 'sqlite');
+	define('dbhost', dirname(__FILE__) . '/unit_tests.sqlite2'); // filename
+	define('dbuser', '');
+	define('dbpasswd', '');
+	define('dbname', '');
+	define('dbport', '');
+	define('table_prefix', '');
 }
-$table_prefix = $GLOBALS['table_prefix'];
-$dbms = $GLOBALS['dbms'];
-$phpbb_root_path = (isset($GLOBALS['phpbb_root_path'])) ? $GLOBALS['phpbb_root_path'] : dirname(__FILE__) . '/travis/';
+$table_prefix = table_prefix;
+$dbms = dbms;
+$phpbb_root_path = (defined('phpbb_root_path')) ? phpbb_root_path : dirname(__FILE__) . '/travis/';
 
 // Load some phpBB dependencies we need for these tests
 require $phpbb_root_path . 'includes/class_loader.php';
@@ -37,5 +37,4 @@ require 'DBTestCase.php';
 
 require($phpbb_root_path . 'includes/db/' . $dbms . '.' . $phpEx);
 $db = new $sql_db();
-$db->sql_connect($GLOBALS['dbhost'], $GLOBALS['dbuser'], $GLOBALS['dbpasswd'], $GLOBALS['dbname'], $GLOBALS['dbport'], false, false);
-unset($GLOBALS['dbpasswd']);
+$db->sql_connect(dbhost, dbuser, dbpasswd, dbname, dbport, false, false);
