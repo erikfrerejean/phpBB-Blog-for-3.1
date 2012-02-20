@@ -4,7 +4,7 @@ class blogpost_comment_test extends DBTestCase
 {
 	protected function getDataSet()
 	{
-		return $this->createXMLDataSet(__DIR__ . '/fixture.xml');
+		return $this->createXMLDataSet(dirname(__FILE__) . '/fixture.xml');
 	}
 
 	public function test_initialise_with_data()

@@ -32,4 +32,17 @@
 			lowUpperBound="35"
 			highLowerBound="70" />
 	</logging>
+
+	<php>
+		<!-- "Real" test database -->
+		<!-- uncomment, otherwise sqlite memory runs
+		<var name="dbms" value=""/>
+		<var name="dbhost" value="" />
+		<var name="dbport" value="" />
+		<var name="dbname" value="" />
+		<var name="dbuser" value="" />
+		<var name="dbpasswd" value="" />
+		<var name="table_prefix" value=""/>
+		-->
+	</php>
 </phpunit>
