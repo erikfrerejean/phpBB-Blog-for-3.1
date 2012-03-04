@@ -42,4 +42,4 @@ require_once dirname(__FILE__) . '/test_framework/blog_database_test_case.php';
 require_once dirname(__FILE__) . '/test_framework/blog_database_test_connection_manager.php';
 
 // Include some files that aren't autoloaded
-require_once dirname(__FILE__) . '/../blog/includes/constants.php';
+require_once dirname(__FILE__) . '/../blog/includes/blog_constants.php';

@@ -54,7 +54,7 @@ class phpbb_ext_blog_controller implements phpbb_extension_controller_interface
 
 		// Include some files that *can not* be autoloaded
 		global $table_prefix; // *MUST* be here, for the include!
-		require dirname(__FILE__) . '/includes/constants.' . $phpEx;
+		require dirname(__FILE__) . '/includes/blog_constants.' . $phpEx;
 	}
 
 	/**
